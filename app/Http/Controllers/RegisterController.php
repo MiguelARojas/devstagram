@@ -12,13 +12,12 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('auth.register');
+        return view ('auth.register');
     }
 
     public function store(Request $request)
     {
-
-        // MODIFICAR EL REQUEST 
+        // MODIFICA EL REQUEST 
         // CONVIERTE LOS ESPACIOS EN - Y ELIMINA CARACTERES ESPECIALES
         // SE EDITO EL REQUEST PARA QUE ARROJE EL ERROR EN LA VISTA Y NO ERROR DE MYSQL
         $request->request->add(['username' => Str::slug($request->username)]);
@@ -49,7 +48,7 @@ class RegisterController extends Controller
         // LE ESTAMOS DICIENDO QUE DEL 'REQUEST' SOLO TOME EL EMAIL Y EL PASSWORD
 
         // REDIRECCIONAR
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index', auth()->user()->username);
 
     }
 }
