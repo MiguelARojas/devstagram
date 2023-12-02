@@ -44,11 +44,9 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-
     public function posts()
     {
         // RELACION ONE TO MANY UN USUARIO CONTIENE MULTIPLES POST
         return $this->hasMany(Post::class);
     }
-
 }

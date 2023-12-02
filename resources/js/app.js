@@ -38,5 +38,3 @@ if(document.getElementById("dropzone")) {
         document.querySelector('[name="imagen"]').value = '';
     });
 }
-
-
